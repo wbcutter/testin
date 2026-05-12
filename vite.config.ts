@@ -9,11 +9,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  base: "/testin/",                    // ← Quan trọng nhất!
+  base: "/testin/",
   plugins: [react(), tailwindcss(), viteSingleFile()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
   },
+  build: {
+    assetsDir: "",
+  }
 });
